@@ -33,26 +33,26 @@ Make sure your Developer Tools are open at all times while working on this proje
 
 ## Get Started
 Create issue tickets from the items below to help you get started. 
-- [ ] Setup your firebase project and create the `.env` file with your keys. (Reference the [Firebase videos](https://vimeo.com/showcase/codetracker-firebase) if you need help getting started)
-- [ ] Plan your project. Take no more than an hour to plan (ERD, Flow Chart, Postman)
-- [ ] Use this template (webpack) to create the project on your github account
-- [ ] Make sure you are in your `workspace/foundations/exercises` directory
-- [ ] `git clone YOUR_GITHUB_REPO_LINK`
-- [ ] `cd` into the directory
-- [ ] Run `npm install` to install your dependencies
-- [ ] Type `code .` to open the project in VS Code
-- [ ] `npm start` to start your server
-- [ ] Plan your project by creating the tickets you will work through using Github Projects
-- [ ] START CODING!
+- [X] Setup your firebase project and create the `.env` file with your keys. (Reference the [Firebase videos](https://vimeo.com/showcase/codetracker-firebase) if you need help getting started)
+- [X] Plan your project. Take no more than an hour to plan (ERD, Flow Chart, Postman)
+- [X] Use this template (webpack) to create the project on your github account
+- [X] Make sure you are in your `workspace/foundations/exercises` directory
+- [X] `git clone YOUR_GITHUB_REPO_LINK`
+- [X] `cd` into the directory
+- [X] Run `npm install` to install your dependencies
+- [X] Type `code .` to open the project in VS Code
+- [X] `npm start` to start your server
+- [X] Plan your project by creating the tickets you will work through using Github Projects
+- [X] START CODING!
 
 # MVP Requirements
 [MVP Wireframe](https://www.figma.com/file/IW4jF3GnzCFLYbEXlgFNIZ/MVP)
-- [ ] An ERD of your data
-- [ ] Use Firebase for DB and authentication
-- [ ] Technical Flow chart (timebox this)
-- [ ] The app has a navigation bar
+- [X] An ERD of your data
+- [X] Use Firebase for DB and authentication
+- [X] Technical Flow chart (timebox this)
+- [X] The app has a navigation bar
   - [ ] A logo
-  - [ ] Logout button
+  - [X] Logout button
   - [ ] Create Entry
   - [ ] Any other options you would like to add
 

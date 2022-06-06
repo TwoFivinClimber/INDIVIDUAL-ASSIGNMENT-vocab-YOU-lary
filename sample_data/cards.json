@@ -1,0 +1,37 @@
+{
+  "-sample1234" : {
+    "firebaseKey": "-sample1234",
+    "title": "Test Card",
+    "description": "This is a rather long section where the definition of the title will be with an explination and maybe some sort of analogy",
+    "category": "Tech",
+    "uid": "9ivJpn3AEndqruNHYMKFiQd6u5z1"
+  },
+  "-sample5678" : {
+    "firebaseKey": "-sample5678",
+    "title": "Test Card",
+    "description": "This is a rather long section where the definition of the title will be with an explination and maybe some sort of analogy",
+    "category": "Tech",
+    "uid": "9ivJpn3AEndqruNHYMKFiQd6u5z1"
+    },
+  "-sample91112" : {
+    "firebaseKey": "-sample91112",
+    "title": "Test Card",
+    "description": "This is a rather long section where the definition of the title will be with an explination and maybe some sort of analogy",
+    "category": "Tech",
+    "uid": "9ivJpn3AEndqruNHYMKFiQd6u5z1"
+    },
+  "-sample13456" : {
+    "firebaseKey": "-sample13456",
+    "title": "Test Card",
+    "description": "This is a rather long section where the definition of the title will be with an explination and maybe some sort of analogy",
+    "category": "Tech",
+    "uid": "9ivJpn3AEndqruNHYMKFiQd6u5z1"
+    },
+  "-sample17892" : {
+    "firebaseKey": "-sample17892",
+    "title": "Test Card",
+    "description": "This is a rather long section where the definition of the title will be with an explination and maybe some sort of analogy",
+    "category": "Tech",
+    "uid": "9ivJpn3AEndqruNHYMKFiQd6u5z1"
+    }
+}
