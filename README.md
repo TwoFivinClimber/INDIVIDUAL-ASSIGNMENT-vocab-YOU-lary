@@ -50,9 +50,9 @@ Create issue tickets from the items below to help you get started.
 - [X] An ERD of your data
 - [X] Use Firebase for DB and authentication
 - [X] Technical Flow chart (timebox this)
-- [ ] The app has a navigation bar
+- [X] The app has a navigation bar
   - [ ] A logo
-  - [ ] Logout button
+  - [X] Logout button
   - [ ] Create Entry
   - [ ] Any other options you would like to add
 
