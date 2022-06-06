@@ -6,7 +6,7 @@ const getCards = (uid) => new Promise((resolve, reject) => {
   axios.get(`${dbUrl}/cards.json?orderBy="uid"&equalTo="${uid}"`)
     .then((response) => {
       if (response.data) {
-        resolve(Object.values(response));
+        resolve(Object.values(response.data));
       } else {
         resolve([]);
       }
