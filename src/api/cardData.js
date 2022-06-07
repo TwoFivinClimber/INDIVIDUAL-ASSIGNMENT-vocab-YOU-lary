@@ -13,5 +13,31 @@ const getCards = (uid) => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
-// eslint-disable-next-line import/prefer-default-export
-export { getCards };
+const createCard = (obj, uid) => new Promise((resolve, reject) => {
+  axios.post(`${dbUrl}/cards.json`, obj)
+    .then((response) => {
+      const update = { firebaseKey: response.data.name };
+      axios.patch(`${dbUrl}/cards/${response.data.name}.json`, update)
+        .then(() => {
+          getCards(uid).then((cardsArr) => resolve(cardsArr));
+        });
+    }).catch((error) => reject(error));
+});
+
+const updateCard = (obj, uid) => new Promise((resolve, reject) => {
+  axios.patch(`${dbUrl}/cards/${obj.firebaseKey}.json`, obj)
+    .then(() => {
+      getCards(uid).then((cardsArr) => resolve(cardsArr));
+    }).catch((error) => reject(error));
+});
+
+const deleteCard = (firebaseKey, uid) => new Promise((resolve, reject) => {
+  axios.delete(`${dbUrl}/cards/${firebaseKey}.json`)
+    .then(() => {
+      getCards(uid).then((booksArr) => resolve(booksArr));
+    }).catch((error) => reject(error));
+});
+
+export {
+  getCards, createCard, updateCard, deleteCard
+};

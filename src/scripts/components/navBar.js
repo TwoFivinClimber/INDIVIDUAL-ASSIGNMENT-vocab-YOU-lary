@@ -24,7 +24,7 @@ const navBar = () => {
             </ul>
           </li>
           <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Add a Card</a>
+          <a id="addCardBtn" class="nav-link active" aria-current="page" href="#">Add a Card</a>
           </li>
         </ul>
         <form class="d-flex" role="search">

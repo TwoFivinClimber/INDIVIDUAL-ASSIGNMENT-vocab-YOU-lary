@@ -22,11 +22,19 @@ body {
   resize: horizontal;
   margin: 6px;
   background-color: #f2f2f2;
-  
-  
+
 }
 .card-desc {
-  
   text-align: left;
   overflow: auto;
+}
+.form-div{
+  width: 60%;
+  background-color: #f2f2f2;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+}
+form .input{
+  background-color: #f2f2f2;
 }
