@@ -1,16 +1,30 @@
+import clearDom from '../../helpers/clearDom';
 import renderToDom from '../../helpers/renderToDom';
 
-const renderCards = () => {
-  const content = `<div class="card" style="width: 18rem;">
+const noCards = () => {
+  const content = '<h1>Add A Card to Grow Your Vocabulary</h1>';
+  renderToDom('#card-div', content);
+};
+
+const renderCards = (arr) => {
+  clearDom();
+  if (arr.length) {
+    let content = '';
+    arr.forEach((card) => {
+      content += `<div class="card">
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
+    <h5 class="card-title">${card.title}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">${card.category}</h6>
+    <p class="card-desc card-text">${card.description}</p>
+    <button type="button" class="btn btn-outline-success">Edit</button>
+    <button id="deleteCard--${card.firebaseKey}"type="button" class="btn btn-outline-danger">Delete</button>
   </div>
 </div>`;
-  renderToDom('#card-div', content);
+    });
+    renderToDom('#card-div', content);
+  } else {
+    noCards();
+  }
 };
 
 export default renderCards;

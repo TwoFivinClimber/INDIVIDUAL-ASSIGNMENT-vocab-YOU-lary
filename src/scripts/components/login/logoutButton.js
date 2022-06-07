@@ -5,6 +5,7 @@ import clearDom from '../../helpers/clearDom';
 const signMeOut = () => {
   firebase.auth().signOut();
   clearDom();
+  document.querySelector('#navigation').innerHTML = '';
 };
 
 const logoutButton = () => {

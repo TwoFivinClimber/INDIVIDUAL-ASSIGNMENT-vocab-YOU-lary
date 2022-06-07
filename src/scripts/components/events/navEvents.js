@@ -1,4 +1,5 @@
 import { getCards } from '../../../api/cardData';
+import addCardForm from '../forms/addCardForm';
 import renderCards from '../pages/myCards';
 
 const navEvents = (uid) => {
@@ -7,6 +8,9 @@ const navEvents = (uid) => {
       getCards(uid).then((cardsArr) => {
         renderCards(cardsArr);
       });
+    }
+    if (e.target.id === 'addCardBtn') {
+      addCardForm();
     }
   });
 };

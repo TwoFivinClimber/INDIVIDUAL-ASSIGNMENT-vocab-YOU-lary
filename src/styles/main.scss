@@ -3,7 +3,38 @@
 
 
 body {
-  background-color: antiquewhite;
-  color: brown;
+  background-color: #E8DAB2 ;
+  color: #042A2B;
   text-align: center;
+  margin-top: 15px;
+}
+
+.card-div{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-basis: 1;
+}
+
+.card {
+  min-height: 16rem;
+  width: 25rem;
+  resize: horizontal;
+  margin: 6px;
+  background-color: #f2f2f2;
+
+}
+.card-desc {
+  text-align: left;
+  overflow: auto;
+}
+.form-div{
+  width: 60%;
+  background-color: #f2f2f2;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+}
+form .input{
+  background-color: #f2f2f2;
 }
