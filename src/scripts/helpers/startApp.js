@@ -14,6 +14,7 @@ const startApp = (user) => {
   navEvents(user.uid);
   formEvents(user.uid);
   domEvents(user.uid);
+  document.getElementById('myCardsBtn').click();
 };
 
 export default startApp;

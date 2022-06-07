@@ -13,6 +13,12 @@ const getCards = (uid) => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
+const getSingleCard = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/cards/${firebaseKey}.json`)
+    .then((cardObj) => resolve(cardObj.data))
+    .catch((error) => reject(error));
+});
+
 const createCard = (obj, uid) => new Promise((resolve, reject) => {
   axios.post(`${dbUrl}/cards.json`, obj)
     .then((response) => {
@@ -24,10 +30,10 @@ const createCard = (obj, uid) => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
-const updateCard = (obj, uid) => new Promise((resolve, reject) => {
+const updateCard = (obj) => new Promise((resolve, reject) => {
   axios.patch(`${dbUrl}/cards/${obj.firebaseKey}.json`, obj)
     .then(() => {
-      getCards(uid).then((cardsArr) => resolve(cardsArr));
+      getCards(obj.uid).then((cardsArr) => resolve(cardsArr));
     }).catch((error) => reject(error));
 });
 
@@ -39,5 +45,5 @@ const deleteCard = (firebaseKey, uid) => new Promise((resolve, reject) => {
 });
 
 export {
-  getCards, createCard, updateCard, deleteCard
+  getCards, createCard, updateCard, deleteCard, getSingleCard
 };
