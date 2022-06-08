@@ -17,8 +17,8 @@ const renderCards = (arr) => {
     <h5 class="card-title">${card.title}</h5>
     <h6 class="card-subtitle mb-2 text-muted">${card.category}</h6>
     <p class="card-desc card-text">${card.description}</p>
-    <button id="editCard--${card.firebaseKey}" type="button" class="btn btn-outline-success">Edit</button>
-    <button id="deleteCard--${card.firebaseKey}"type="button" class="btn btn-outline-danger">Delete</button>
+    <i id="editCard--${card.firebaseKey}" type="button" class="edit fa-solid fa-user-pen fa-2x"></i>
+    <i id="deleteCard--${card.firebaseKey}"type="button" class="trash fa-solid fa-trash-can fa-2x"></i>
   </div>
 </div>`;
     });

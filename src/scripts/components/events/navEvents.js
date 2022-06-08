@@ -14,7 +14,21 @@ const navEvents = (uid) => {
     if (e.target.id === 'addCardBtn') {
       addCardForm();
     }
+    // FILTER CARDS
+    if (e.target.id === 'html') {
+      console.warn('html clicked');
+    }
+    if (e.target.id === 'javaScript') {
+      console.warn('JS Clicked');
+    }
+    if (e.target.id === 'css') {
+      console.warn('css clicked');
+    }
+    if (e.target.id === 'python') {
+      console.warn('python clicked');
+    }
   });
+
   // SEARCH CARD
   document.querySelector('#search').addEventListener('keyup', (e) => {
     const searchBar = document.querySelector('#search').value.toLowerCase();

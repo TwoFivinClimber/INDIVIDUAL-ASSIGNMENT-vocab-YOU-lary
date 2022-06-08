@@ -10,8 +10,10 @@ const formEvents = (uid) => {
         category: document.querySelector('#select-category').value,
         description: document.querySelector('#description').value,
         title: document.querySelector('#title').value,
-        uid
+        uid,
+        date: new Date().toLocaleString()
       };
+      console.warn(cardObj);
       createCard(cardObj, uid).then((cardsArr) => {
         renderCards(cardsArr);
       });

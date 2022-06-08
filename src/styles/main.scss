@@ -36,6 +36,41 @@ body {
   margin-right: auto;
   margin-top: 10%;
 }
+
 form .input{
   background-color: #f2f2f2;
+}
+
+// NAV-STUFF
+.bg-dark{
+  background-color: #f2f2f2!important;
+}
+.nav-link{
+  color: black!important;
+}
+.navbar-toggler-icon{
+  background-color: grey!important;
+}
+.vocab-you{
+  margin-left: 4px;
+  color: #DD6E42!important;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: x-large;
+}
+///////////
+//CARD STUFF
+.trash{
+  color: #D84727;
+  margin-left: 5px;
+  border: 2px, solid, #D84727;
+  border-radius: 10%;
+  padding: 4px;
+
+}
+.edit{
+color: #5EB1BF;
+margin-right: 5px;
+border: 2px, solid, #5EB1BF;
+border-radius: 10%;
+padding: 4px;
 }
