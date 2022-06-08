@@ -31,6 +31,11 @@ const formEvents = (uid) => {
       updateCard(cardObj).then((cardsArray) => renderCards(cardsArray));
     }
   });
+  document.querySelector('#form-div').addEventListener('click', (e) => {
+    if (e.target.id === 'cancel-edit') {
+      document.getElementById('myCardsBtn').click();
+    }
+  });
 };
 
 export default formEvents;

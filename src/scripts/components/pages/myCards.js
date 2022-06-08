@@ -1,5 +1,6 @@
 import clearDom from '../../helpers/clearDom';
 import renderToDom from '../../helpers/renderToDom';
+import renderFilter from './cardFilter';
 
 const noCards = (str) => {
   clearDom();
@@ -23,6 +24,7 @@ const renderCards = (arr) => {
 </div>`;
     });
     renderToDom('#card-div', content);
+    renderFilter();
   } else {
     noCards();
   }

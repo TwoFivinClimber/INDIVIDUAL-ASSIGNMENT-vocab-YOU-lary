@@ -29,7 +29,7 @@ const navBar = () => {
           </li>
         </ul>
         <form class="d-flex" role="search">
-          <input id="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <input id="search" class="searchBar form-control me-2" type="search" placeholder="Search" aria-label="Search">
         </form>
         <div id="logout-nav"></div>
       </div>

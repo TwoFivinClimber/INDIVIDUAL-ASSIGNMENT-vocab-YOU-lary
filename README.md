@@ -54,7 +54,7 @@ Create issue tickets from the items below to help you get started.
   - [X] A logo
   - [X] Logout button
   - [X] Create Entry
-  - [ ] Any other options you would like to add
+  - [X] Any other options you would like to add
 
 **The most basic requirement for this project is that a user can:**
 - [X] Login and Logout of the application using Firebase Google Authentication
@@ -63,14 +63,14 @@ Create issue tickets from the items below to help you get started.
   - [X] Title
   - [X] Definition
   - [X] Language/Tech
-  - [] Time submitted - Not on form. Handle in your JS
+  - [X] Time submitted - Not on form. Handle in your JS
   - [X] user ID - Not on form. Pull from User object.
 - [X] READ THIER entries
 - [X] UPDATE THEIR entries
 - [X] DELETE THEIR entries
-- [ ] Filter by language/tech
-- [ ] Style your application using your own creativity!
-- [ ] No errors - linters should be clean
+- [X] Filter by language/tech
+- [X] Style your application using your own creativity!
+- [] No errors - linters should be clean
 
 ## Stretch 1
 [Stretch 1 Wireframe](https://www.figma.com/file/yZE38QzpoUWELA22gGZJve/Stretch-1)

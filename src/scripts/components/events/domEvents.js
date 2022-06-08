@@ -16,6 +16,11 @@ const domEvents = (uid) => {
       getSingleCard(firebaseKey).then((cardObj) => addCardForm(cardObj));
     }
   });
+  document.querySelector('#sort-div').addEventListener('click', (e) => {
+    if (e.target.id === 'aToZ') {
+      console.warn('alphabetical clicked');
+    }
+  });
 };
 
 export default domEvents;

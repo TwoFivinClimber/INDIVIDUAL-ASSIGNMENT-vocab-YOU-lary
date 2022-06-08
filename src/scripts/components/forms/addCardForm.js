@@ -9,15 +9,15 @@ const addCardForm = (obj = {}) => {
     <input id="title" type="text" class="form-control" placeholder="Enter Word or Topic Here" value="${obj.title || ''}">
     <label for="select-category" class="form-label">Category</label>
     <select id="select-category" class="form-select" aria-label="Default select example">
-      <option value="Tech: JavaScript">Tech: JavaScript</option>
-      <option value="Tech: HTML">Tech: HTML</option>
-      <option value="Tech: CSS">Tech: CSS</option>
-      <option value="Python">Tech: Python</option>
+      <option value="Tech-JavaScript"${obj.category === 'Tech-JavaScript' ? 'selected' : ''}>Tech-javaScript</option>
+      <option value="Tech-HTML" ${obj.category === 'Tech-HTML' ? 'selected' : ''}>Tech-HTML</option>
+      <option value="Tech-CSS" ${obj.category === 'Tech-CSS' ? 'selected' : ''}>Tech-CSS</option>
+      <option value="Tech-Python"${obj.category === 'Tech-Python' ? 'selected' : ''}>Tech-Python</option>
     </select>
     <label for="description" class="form-label">Description</label>
     <textarea id="description" class="form-control" id="description" rows="3">${obj.description || ''}</textarea>
-    <input class="btn btn-primary" type="submit" value="Submit">
-    <input class="btn btn-primary" type="reset" value="Cancel">
+    <input class="edit-submit btn btn-primary" type="submit" value="Submit">
+    <input id="cancel-edit" class="cancel btn btn-primary" type="reset" value="Cancel">
     </div>
   </form>`;
   renderToDom('#form-div', content);
