@@ -51,7 +51,7 @@ Create issue tickets from the items below to help you get started.
 - [X] Use Firebase for DB and authentication
 - [X] Technical Flow chart (timebox this)
 - [X] The app has a navigation bar
-  - [ ] A logo
+  - [X] A logo
   - [X] Logout button
   - [X] Create Entry
   - [ ] Any other options you would like to add
@@ -63,7 +63,7 @@ Create issue tickets from the items below to help you get started.
   - [X] Title
   - [X] Definition
   - [X] Language/Tech
-  - [X] Time submitted - Not on form. Handle in your JS
+  - [] Time submitted - Not on form. Handle in your JS
   - [X] user ID - Not on form. Pull from User object.
 - [X] READ THIER entries
 - [X] UPDATE THEIR entries

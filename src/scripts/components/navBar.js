@@ -1,13 +1,13 @@
 import renderToDom from '../helpers/renderToDom';
 
 const navBar = () => {
-  const content = `<nav class="navbar navbar-expand-lg bg-light">
+  const content = `<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a id="myCardsBtn"class="nav-link active" aria-current="page" href="#">My Cards</a>
@@ -17,7 +17,10 @@ const navBar = () => {
               My Categories
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a id="html" class="dropdown-item" href="#">Tech: HTML</a></li>
+              <li><a id="javaScript" class="dropdown-item" href="#">Tech: JavaScript</a></li>
+              <li><a id="css" class="dropdown-item" href="#">Tech: CSS</a></li>
+              <li><a id="python" class="dropdown-item" href="#">Tech: Python</a></li>
             </ul>
           </li>
           <li class="nav-item">
