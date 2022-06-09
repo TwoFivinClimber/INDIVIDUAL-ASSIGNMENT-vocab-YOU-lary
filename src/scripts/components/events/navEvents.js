@@ -1,5 +1,6 @@
 import { getCards } from '../../../api/cardData';
 import addCardForm from '../forms/addCardForm';
+import addCategoryForm from '../forms/addCategoryForm';
 import { renderCards, noCards } from '../pages/myCards';
 
 const navEvents = (uid) => {
@@ -13,6 +14,9 @@ const navEvents = (uid) => {
     // ADD CARD
     if (e.target.id === 'addCardBtn') {
       addCardForm();
+    }
+    if (e.target.id === 'addCategory') {
+      addCategoryForm();
     }
     if (e.target.id === 'html') {
       // eslint-disable-next-line no-use-before-define

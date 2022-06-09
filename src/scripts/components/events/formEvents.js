@@ -11,9 +11,9 @@ const formEvents = (uid) => {
         description: document.querySelector('#description').value,
         title: document.querySelector('#title').value,
         uid,
-        date: new Date().toLocaleString()
+        date: new Date().toLocaleString(),
+        dateData: Date.now()
       };
-      console.warn(cardObj);
       createCard(cardObj, uid).then((cardsArr) => {
         renderCards(cardsArr);
       });

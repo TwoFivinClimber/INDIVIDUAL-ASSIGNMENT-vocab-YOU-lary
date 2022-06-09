@@ -3,10 +3,10 @@
 
 
 body {
-  background-color: #E8DAB2 ;
+  background-color: #f5ddbef7 ;
   color: #042A2B;
   text-align: center;
-  margin-top: 15px;
+  // margin-top: 15px;
 }
 ///CARD STUFF
 .card-div{
@@ -74,14 +74,19 @@ form .input{
 
 
 // NAV-STUFF
+.nav-cont{
+  border: solid black 1px;
+  background-color: #C0D6DF ;
+}
 .bg-dark{
   background-color: #f2f2f2!important;
 }
 .nav-link{
   color: black!important;
 }
-.navbar-toggler-icon{
+.navBtn{
   background-color: grey!important;
+  color: black!important;
 }
 .vocab-you{
   margin-left: 4px;
