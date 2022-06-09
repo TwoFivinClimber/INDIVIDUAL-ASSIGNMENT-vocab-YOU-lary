@@ -1,5 +1,6 @@
 import { getCards } from '../../../api/cardData';
 import addCardForm from '../forms/addCardForm';
+import addCategoryForm from '../forms/addCategoryForm';
 import { renderCards, noCards } from '../pages/myCards';
 
 const navEvents = (uid) => {
@@ -14,18 +15,24 @@ const navEvents = (uid) => {
     if (e.target.id === 'addCardBtn') {
       addCardForm();
     }
-    // FILTER CARDS
+    if (e.target.id === 'addCategory') {
+      addCategoryForm();
+    }
     if (e.target.id === 'html') {
-      console.warn('html clicked');
+      // eslint-disable-next-line no-use-before-define
+      categoryFilter(uid, 'Tech-HTML');
     }
     if (e.target.id === 'javaScript') {
-      console.warn('JS Clicked');
+      // eslint-disable-next-line no-use-before-define
+      categoryFilter(uid, 'Tech-JavaScript');
     }
     if (e.target.id === 'css') {
-      console.warn('css clicked');
+      // eslint-disable-next-line no-use-before-define
+      categoryFilter(uid, 'Tech-CSS');
     }
     if (e.target.id === 'python') {
-      console.warn('python clicked');
+      // eslint-disable-next-line no-use-before-define
+      categoryFilter(uid, 'Tech-Python');
     }
   });
 
@@ -49,6 +56,14 @@ const navEvents = (uid) => {
       });
       document.querySelector('#search').value = '';
     }
+  });
+};
+
+// NAV FILTER
+const categoryFilter = (uid, str) => {
+  getCards(uid).then((cardsArr) => {
+    const catArray = cardsArr.filter((card) => card.category === str);
+    renderCards(catArray);
   });
 };
 
