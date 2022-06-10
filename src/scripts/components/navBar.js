@@ -1,6 +1,7 @@
 import renderToDom from '../helpers/renderToDom';
+import navCategories from './navCategoryRender';
 
-const navBar = () => {
+const navBar = (uid) => {
   const content = `<nav class="navbar navbar-expand-lg navbar-dark bg-inverse mb-5">
   <div class="nav-cont container-fluid">
   <i class="fa-solid fa-book fa-3x"></i>
@@ -17,12 +18,8 @@ const navBar = () => {
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               My Categories
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a id="html" class="dropdown-item" href="#">Tech: HTML</a></li>
-              <li><a id="javaScript" class="dropdown-item" href="#">Tech: JavaScript</a></li>
-              <li><a id="css" class="dropdown-item" href="#">Tech: CSS</a></li>
-              <li><a id="python" class="dropdown-item" href="#">Tech: Python</a></li>
-              <li><a id="addCategory" class="dropdown-item" href="#">Add A Category</a></li>
+            <ul id="navCategories" class="dropdown-menu" aria-labelledby="navbarDropdown">
+           
             </ul>
           </li>
           <li class="nav-item">
@@ -40,6 +37,7 @@ const navBar = () => {
     </div>
   </nav>`;
   renderToDom('#navigation', content);
+  navCategories(uid);
 };
 
 export default navBar;

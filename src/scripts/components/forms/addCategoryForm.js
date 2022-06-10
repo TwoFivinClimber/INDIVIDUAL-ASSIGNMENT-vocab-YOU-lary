@@ -3,7 +3,7 @@ import renderToDom from '../../helpers/renderToDom';
 
 const addCategoryForm = () => {
   clearDom();
-  const content = `<form id="newCategory">
+  const content = `<form id="add-category">
   <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label">New Category</label>
     <input id="newCategory" type="text" class="form-control" placeholder="Enter a Tech Category or Topic" value="" required>

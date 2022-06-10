@@ -1,7 +1,9 @@
 import { getCards } from '../../../api/cardData';
 import addCardForm from '../forms/addCardForm';
 import addCategoryForm from '../forms/addCategoryForm';
+import navCategories from '../navCategoryRender';
 import { renderCards, noCards } from '../pages/myCards';
+import categoryFilter from './navFilter';
 
 const navEvents = (uid) => {
   document.querySelector('#navigation').addEventListener('click', (e) => {
@@ -13,29 +15,24 @@ const navEvents = (uid) => {
     }
     // ADD CARD
     if (e.target.id === 'addCardBtn') {
-      addCardForm();
+      addCardForm(uid);
+    }
+    if (e.target.id === 'navbarDropdown') {
+      navCategories(uid);
     }
     if (e.target.id === 'addCategory') {
       addCategoryForm();
     }
-    if (e.target.id === 'html') {
-      // eslint-disable-next-line no-use-before-define
-      categoryFilter(uid, 'Tech-HTML');
-    }
-    if (e.target.id === 'javaScript') {
-      // eslint-disable-next-line no-use-before-define
-      categoryFilter(uid, 'Tech-JavaScript');
-    }
-    if (e.target.id === 'css') {
-      // eslint-disable-next-line no-use-before-define
-      categoryFilter(uid, 'Tech-CSS');
-    }
-    if (e.target.id === 'python') {
-      // eslint-disable-next-line no-use-before-define
-      categoryFilter(uid, 'Tech-Python');
-    }
   });
 
+  // NAV CATEGORY FILTER
+  document.querySelector('#navCategories').addEventListener('click', (e) => {
+    if (e.target.id.includes('navCat')) {
+      const [, filterStr] = e.target.id.split('--');
+      // eslint-disable-next-line no-use-before-define
+      categoryFilter(uid, filterStr);
+    }
+  });
   // SEARCH CARD
   document.querySelector('#search').addEventListener('keyup', (e) => {
     const searchBar = document.querySelector('#search').value.toLowerCase();
@@ -56,14 +53,6 @@ const navEvents = (uid) => {
       });
       document.querySelector('#search').value = '';
     }
-  });
-};
-
-// NAV FILTER
-const categoryFilter = (uid, str) => {
-  getCards(uid).then((cardsArr) => {
-    const catArray = cardsArr.filter((card) => card.category === str);
-    renderCards(catArray);
   });
 };
 
