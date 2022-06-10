@@ -13,6 +13,10 @@ const addCardForm = (uid, obj = {}) => {
     </select>
     <label for="description" class="form-label">Description</label>
     <textarea id="description" class="form-control" id="description" rows="3" required>${obj.description || ''}</textarea>
+    <div class="cardMod form-check form-switch">
+    <input class="pubCheck form-check-input" type="checkbox" role="switch" id="isPublic" ${obj.isPublic ? 'checked' : ''} >
+    <label class="form-check-label" for="flexSwitchCheckDefault">Public</label>
+    </div>
     <input class="edit-submit btn btn-primary" type="submit" value="Submit">
     <input id="cancel-edit" class="cancel btn btn-primary" type="reset" value="Cancel">
     </div>

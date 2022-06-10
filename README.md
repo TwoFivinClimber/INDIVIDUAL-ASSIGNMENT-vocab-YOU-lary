@@ -84,8 +84,8 @@ Create issue tickets from the items below to help you get started.
 
 ## Stretch 3
 [Stretch 3 Wireframe](https://www.figma.com/file/KgbkfaoRd5F8Q4qZ3G2Bg2/Stretch-3)
-- [ ] Users can mark an entry as public or private
-- [ ] Create a new navigation item called "Community" and on click of this item, users can see all the public entries
-- [ ] If an entry is public, anyone can READ it. If it is private, only the user who created it can see it.
-- [ ] If an entry is public, only the user who created it can CRUD on it
-- [ ] If an entry is public, any user can copy the entry to their own set of entries and then CRUD on the new/copied entry
+- [X] Users can mark an entry as public or private
+- [X] Create a new navigation item called "Community" and on click of this item, users can see all the public entries
+- [X] If an entry is public, anyone can READ it. If it is private, only the user who created it can see it.
+- [X] If an entry is public, only the user who created it can CRUD on it
+- [X] If an entry is public, any user can copy the entry to their own set of entries and then CRUD on the new/copied entry

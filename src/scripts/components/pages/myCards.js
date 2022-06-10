@@ -8,7 +8,7 @@ const noCards = (str) => {
   renderToDom('#card-div', content);
 };
 
-const renderCards = (arr) => {
+const renderCards = (arr, uid) => {
   clearDom();
   if (arr.length) {
     let content = '';
@@ -18,8 +18,14 @@ const renderCards = (arr) => {
     <h5 class="card-title">${card.title}</h5>
     <h6 class="card-subtitle mb-2 text-muted">${card.category}</h6>
     <p class="card-desc card-text">${card.description}</p>
-    <i id="editCard--${card.firebaseKey}" type="button" class="edit fa-solid fa-user-pen fa-2x"></i>
-    <i id="deleteCard--${card.firebaseKey}"type="button" class="trash fa-solid fa-trash-can fa-2x"></i>
+    <div class="cardMod form-check form-switch">
+    <input class="${card.uid !== uid ? 'mod' : ''} pubCheck form-check-input" type="checkbox" role="switch" id="isPublic--${card.firebaseKey}" ${card.isPublic ? 'checked' : ''}>
+    <label class="${card.uid !== uid ? 'mod' : ''} form-check-label" for="flexSwitchCheckDefault">Public</label>
+    </div>
+    <i id="editCard--${card.firebaseKey}" type="button" class="${card.uid !== uid ? 'mod' : ''} edit fa-solid fa-user-pen fa-2x"></i>
+    <i id="deleteCard--${card.firebaseKey}"type="button" class="${card.uid !== uid ? 'mod' : ''} trash fa-solid fa-trash-can fa-2x"></i>
+    <input type="radio" class="${card.uid === uid ? 'mod' : ''} btn-check" name="options-outlined" id="copyCard--${card.firebaseKey}" autocomplete="off" checked>
+    <label id="copyCard--${card.firebaseKey}" class="${card.uid === uid ? 'mod' : ''} btn btn-outline-success" for="success-outlined">Add to Collection</label>
   </div>
 </div>`;
     });
