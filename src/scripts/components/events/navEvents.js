@@ -1,4 +1,4 @@
-import { getCards } from '../../../api/cardData';
+import { getAllCards, getCards } from '../../../api/cardData';
 import addCardForm from '../forms/addCardForm';
 import addCategoryForm from '../forms/addCategoryForm';
 import navCategories from '../navCategoryRender';
@@ -10,7 +10,7 @@ const navEvents = (uid) => {
     // GET USER CARDS
     if (e.target.id === 'myCardsBtn') {
       getCards(uid).then((cardsArr) => {
-        renderCards(cardsArr);
+        renderCards(cardsArr, uid);
       });
     }
     // ADD CARD
@@ -22,6 +22,12 @@ const navEvents = (uid) => {
     }
     if (e.target.id === 'addCategory') {
       addCategoryForm();
+    }
+    if (e.target.id === 'communityBtn') {
+      getAllCards().then((cardsArr) => {
+        const renderArray = cardsArr.filter((card) => card.uid !== uid);
+        renderCards(renderArray, uid);
+      });
     }
   });
 
@@ -45,7 +51,7 @@ const navEvents = (uid) => {
             renderArr.push(card);
           }
           if (renderArr.length) {
-            renderCards(renderArr);
+            renderCards(renderArr, uid);
           } else {
             noCards('Hmmmm...Nothing Found. Try Again or Add the Card');
           }

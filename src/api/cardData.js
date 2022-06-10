@@ -13,6 +13,12 @@ const getCards = (uid) => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
+const getAllCards = () => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/cards.json`)
+    .then((cardsArr) => resolve(Object.values(cardsArr.data)))
+    .catch((error) => reject(error));
+});
+
 const getSingleCard = (firebaseKey) => new Promise((resolve, reject) => {
   axios.get(`${dbUrl}/cards/${firebaseKey}.json`)
     .then((cardObj) => resolve(cardObj.data))
@@ -30,8 +36,8 @@ const createCard = (obj, uid) => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
-const updateCard = (obj) => new Promise((resolve, reject) => {
-  axios.patch(`${dbUrl}/cards/${obj.firebaseKey}.json`, obj)
+const updateCard = (obj, firebaseKey) => new Promise((resolve, reject) => {
+  axios.patch(`${dbUrl}/cards/${obj.firebaseKey || firebaseKey}.json`, obj)
     .then(() => {
       getCards(obj.uid).then((cardsArr) => resolve(cardsArr));
     }).catch((error) => reject(error));
@@ -45,5 +51,5 @@ const deleteCard = (firebaseKey, uid) => new Promise((resolve, reject) => {
 });
 
 export {
-  getCards, createCard, updateCard, deleteCard, getSingleCard
+  getCards, createCard, updateCard, deleteCard, getSingleCard, getAllCards
 };

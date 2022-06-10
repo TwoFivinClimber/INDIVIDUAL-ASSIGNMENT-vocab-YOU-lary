@@ -36,7 +36,6 @@ body {
   border: 2px, solid, #D84727;
   border-radius: 10%;
   padding: 4px;
-
 }
 .edit{
 color: #5EB1BF;
@@ -44,6 +43,21 @@ margin-right: 5px;
 border: 2px, solid, #5EB1BF;
 border-radius: 10%;
 padding: 4px;
+}
+.cardMod{
+  display: flex;
+  justify-content: center;
+  margin-top: 6px;
+  margin-bottom: 0px;
+}
+.pubCheck{
+  margin-right: 6px;
+}
+.form-check .form-check-input{
+  float: none;
+}
+.mod{
+  display: none;
 }
 //// CARD 
 

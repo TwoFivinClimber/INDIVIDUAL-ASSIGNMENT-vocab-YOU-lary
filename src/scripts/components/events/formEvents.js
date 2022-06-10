@@ -12,12 +12,13 @@ const formEvents = (uid) => {
         category: document.querySelector('#select-category').value,
         description: document.querySelector('#description').value,
         title: document.querySelector('#title').value,
+        isPublic: document.querySelector('#isPublic').checked,
         uid,
         date: new Date().toLocaleString(),
         dateData: Date.now()
       };
       createCard(cardObj, uid).then((cardsArr) => {
-        renderCards(cardsArr);
+        renderCards(cardsArr, uid);
       });
     }
     if (e.target.id.includes('add-category')) {
@@ -37,10 +38,11 @@ const formEvents = (uid) => {
         category: document.querySelector('#select-category').value,
         description: document.querySelector('#description').value,
         title: document.querySelector('#title').value,
+        isPublic: document.querySelector('#isPublic').checked,
         firebaseKey,
         uid
       };
-      updateCard(cardObj).then((cardsArray) => renderCards(cardsArray));
+      updateCard(cardObj).then((cardsArray) => renderCards(cardsArray, uid));
     }
   });
   document.querySelector('#form-div').addEventListener('click', (e) => {
