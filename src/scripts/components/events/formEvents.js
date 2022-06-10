@@ -1,4 +1,6 @@
 import { createCard, updateCard } from '../../../api/cardData';
+import { addCategory } from '../../../api/categoryData';
+import addCardForm from '../forms/addCardForm';
 import { renderCards } from '../pages/myCards';
 
 const formEvents = (uid) => {
@@ -16,6 +18,16 @@ const formEvents = (uid) => {
       };
       createCard(cardObj, uid).then((cardsArr) => {
         renderCards(cardsArr);
+      });
+    }
+    if (e.target.id.includes('add-category')) {
+      const newCategory = document.querySelector('#newCategory').value;
+      const catObj = {
+        name: `Tech-${newCategory}`,
+        uid
+      };
+      addCategory(catObj, uid).then(() => {
+        addCardForm(uid, {});
       });
     }
     // UPDATE CARD
