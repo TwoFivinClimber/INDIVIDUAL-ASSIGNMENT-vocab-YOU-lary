@@ -3,7 +3,7 @@ import { addCategory } from '../../../api/categoryData';
 import addCardForm from '../forms/addCardForm';
 import { renderCards } from '../pages/myCards';
 
-const formEvents = (uid) => {
+const formEvents = (user) => {
   document.querySelector('#form-div').addEventListener('submit', (e) => {
     e.preventDefault();
     // CREATE CARD
@@ -13,22 +13,24 @@ const formEvents = (uid) => {
         description: document.querySelector('#description').value,
         title: document.querySelector('#title').value,
         isPublic: document.querySelector('#isPublic').checked,
-        uid,
+        uid: user.uid,
+        displayName: `${user.displayName}`,
+        photoURL: `${user.photoURL}`,
         date: new Date().toLocaleString(),
         dateData: Date.now()
       };
-      createCard(cardObj, uid).then((cardsArr) => {
-        renderCards(cardsArr, uid);
+      createCard(cardObj, user.uid).then((cardsArr) => {
+        renderCards(cardsArr, user.uid);
       });
     }
     if (e.target.id.includes('add-category')) {
       const newCategory = document.querySelector('#newCategory').value;
       const catObj = {
         name: `Tech-${newCategory}`,
-        uid
+        uid: user.uid
       };
-      addCategory(catObj, uid).then(() => {
-        addCardForm(uid, {});
+      addCategory(catObj, user.uid).then(() => {
+        addCardForm(user.uid, {});
       });
     }
     // UPDATE CARD
@@ -40,9 +42,9 @@ const formEvents = (uid) => {
         title: document.querySelector('#title').value,
         isPublic: document.querySelector('#isPublic').checked,
         firebaseKey,
-        uid
+        uid: user.uid
       };
-      updateCard(cardObj).then((cardsArray) => renderCards(cardsArray, uid));
+      updateCard(cardObj).then((cardsArray) => renderCards(cardsArray, user.uid));
     }
   });
   document.querySelector('#form-div').addEventListener('click', (e) => {
