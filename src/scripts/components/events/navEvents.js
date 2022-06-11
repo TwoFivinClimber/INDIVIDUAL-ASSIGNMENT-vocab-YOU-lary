@@ -26,7 +26,11 @@ const navEvents = (uid) => {
     if (e.target.id === 'communityBtn') {
       getPublicCards().then((cardsArr) => {
         const renderArray = cardsArr.filter((card) => card.uid !== uid);
-        renderCards(renderArray, uid);
+        if (cardsArr.length) {
+          renderCards(renderArray, uid);
+        } else {
+          noCards('Tell your friends about the site !');
+        }
       });
     }
   });

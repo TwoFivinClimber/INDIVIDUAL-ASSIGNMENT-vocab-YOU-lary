@@ -21,10 +21,14 @@ const renderCards = (arr, uid) => {
     <div class="cardMod form-check form-switch">
     <input class="${card.uid !== uid ? 'mod' : ''} pubCheck form-check-input" type="checkbox" role="switch" id="isPublic--${card.firebaseKey}" ${card.isPublic ? 'checked' : ''}>
     <label class="${card.uid !== uid ? 'mod' : ''} form-check-label" for="flexSwitchCheckDefault">Public</label>
-    </div>
+  </div>
     <i id="editCard--${card.firebaseKey}" type="button" class="${card.uid !== uid ? 'mod' : ''} edit fa-solid fa-user-pen fa-2x"></i>
     <i id="deleteCard--${card.firebaseKey}"type="button" class="${card.uid !== uid ? 'mod' : ''} trash fa-solid fa-trash-can fa-2x"></i>
     <button id="copyCard--${card.firebaseKey}" class="${card.uid === uid ? 'mod' : ''} btn btn-success" for="success-outlined">Add to Collection</button>
+  <div userDIV>
+    <span id="userOnCard" class="${card.uid === uid ? 'mod' : ''} userText">Created By: ${card.displayName}</span>
+    <img id="userIcon" class="${card.uid === uid ? 'mod' : ''} userIcon" src="${card.photoURL}"></img>
+  </div>
     <div class="cardDate">Created: ${card.date}</div>
   </div>
 </div>`;
@@ -37,8 +41,3 @@ const renderCards = (arr, uid) => {
 };
 
 export { renderCards, noCards };
-
-/* <div userDIV>
-<span id="userOnCard" class="${card.uid === uid ? 'mod' : ''} userText">Created By: ${card.displayName}</span>
-<img id="userIcon" class="${card.uid === uid ? 'mod' : ''} userIcon" src="${card.photoURL}"></img>
-</div> */
