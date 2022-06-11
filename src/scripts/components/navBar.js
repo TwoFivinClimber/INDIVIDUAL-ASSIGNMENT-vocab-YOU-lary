@@ -1,7 +1,7 @@
 import renderToDom from '../helpers/renderToDom';
 import navCategories from './navCategoryRender';
 
-const navBar = (uid) => {
+const navBar = (user) => {
   const content = `<nav class="navbar navbar-expand-lg navbar-dark bg-inverse mb-5">
   <div class="nav-cont container-fluid">
   <i class="fa-solid fa-book fa-3x"></i>
@@ -33,11 +33,12 @@ const navBar = (uid) => {
           <input id="search" class="searchBar form-control me-2" type="search" placeholder="Search" aria-label="Search">
         </form>
         <div id="logout-nav"></div>
+        <img id="userIcon" class="userIcon" src="${user.photoURL}"></img>
       </div>
     </div>
   </nav>`;
   renderToDom('#navigation', content);
-  navCategories(uid);
+  navCategories(user.uid);
 };
 
 export default navBar;

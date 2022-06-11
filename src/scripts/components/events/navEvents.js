@@ -1,4 +1,4 @@
-import { getAllCards, getCards } from '../../../api/cardData';
+import { getCards, getPublicCards } from '../../../api/cardData';
 import addCardForm from '../forms/addCardForm';
 import addCategoryForm from '../forms/addCategoryForm';
 import navCategories from '../navCategoryRender';
@@ -24,7 +24,7 @@ const navEvents = (uid) => {
       addCategoryForm();
     }
     if (e.target.id === 'communityBtn') {
-      getAllCards().then((cardsArr) => {
+      getPublicCards().then((cardsArr) => {
         const renderArray = cardsArr.filter((card) => card.uid !== uid);
         renderCards(renderArray, uid);
       });

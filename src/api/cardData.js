@@ -13,8 +13,8 @@ const getCards = (uid) => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
-const getAllCards = () => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/cards.json`)
+const getPublicCards = () => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/cards.json?orderBy="isPublic"&equalTo=true`)
     .then((cardsArr) => resolve(Object.values(cardsArr.data)))
     .catch((error) => reject(error));
 });
@@ -51,5 +51,5 @@ const deleteCard = (firebaseKey, uid) => new Promise((resolve, reject) => {
 });
 
 export {
-  getCards, createCard, updateCard, deleteCard, getSingleCard, getAllCards
+  getCards, createCard, updateCard, deleteCard, getSingleCard, getPublicCards
 };
