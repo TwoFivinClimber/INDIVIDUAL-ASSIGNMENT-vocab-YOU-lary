@@ -4,7 +4,7 @@ import navCategories from './navCategoryRender';
 const navBar = (user) => {
   const content = `<nav class="navbar navbar-expand-lg navbar-dark bg-inverse mb-5">
   <div class="nav-cont container-fluid">
-  <i class="fa-solid fa-book fa-3x"></i>
+  <i class="fa-solid fa-id-card fa-3x"></i>
     <i class="vocab-you navbar-brand" href="#">VocabYou</i>
     <button class="navBtn navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
