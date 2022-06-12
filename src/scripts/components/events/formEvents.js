@@ -14,8 +14,8 @@ const formEvents = (user) => {
         title: document.querySelector('#title').value,
         isPublic: document.querySelector('#isPublic').checked,
         uid: user.uid,
-        displayName: `${user.displayName}`,
-        photoURL: `${user.photoURL}`,
+        displayName: user.displayName,
+        photoURL: user.photoURL,
         date: new Date().toLocaleString(),
         dateData: Date.now()
       };

@@ -25,4 +25,12 @@ const addCategory = (catObj, uid) => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
-export { getAllCategories, getCategories, addCategory };
+const getSingleCategory = (catName) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/categories/.json?orderBy="name"&equalTo="${catName}"`)
+    .then((catObj) => resolve(catObj.data))
+    .catch((error) => reject(error));
+});
+
+export {
+  getAllCategories, getCategories, addCategory, getSingleCategory
+};

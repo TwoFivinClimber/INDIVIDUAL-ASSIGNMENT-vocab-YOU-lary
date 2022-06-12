@@ -15,7 +15,7 @@ const startApp = (user) => {
   logoutButton();
   navEvents(user.uid);
   formEvents(user);
-  domEvents(user.uid);
+  domEvents(user);
   document.getElementById('myCardsBtn').click();
 };
 

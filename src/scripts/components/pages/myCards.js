@@ -29,7 +29,7 @@ const renderCards = (arr, uid) => {
     <span id="userOnCard" class="${card.uid === uid ? 'mod' : ''} userText">Created By: ${card.displayName}</span>
     <img id="userIcon" class="${card.uid === uid ? 'mod' : ''} userIcon" src="${card.photoURL}"></img>
   </div>
-    <div class="cardDate">Created: ${card.date}</div>
+    <div class="cardDate">${card.cardCopied ? `Copied from ${card.copiedFrom} on ` : 'Created: '}${card.date}</div>
   </div>
 </div>`;
     });
