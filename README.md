@@ -13,18 +13,18 @@ This application main purpose is to store note cards centered around Tech-Vocabu
 <image src="./readmePhotos/addCat.png"></image>
 
 #### Users can then create their first card that is added to their "My Cards" section on the Nav Bar.
-<image src="./readmePhotos/createCard"></image>
+<image src="./readmePhotos/createCard.png"></image>
 
 #### The "My Cards" tab brings the user to the landing page for the site.
 Users can update, delete, sort, and make their cards public or private using the icons on each card.
-<image src="./readmePhotos/myCards"></image>
+<image src="./readmePhotos/myCards.png"></image>
 
 #### Selecting a Category in the "My Categories" tab located on the Nav Bar will show all cards that have been created with that category.
-<image src="./readmePhotos/category"></image>
+<image src="./readmePhotos/category.png"></image>
 
 #### Selecting "Community Cards" from the Nav Bar displays the card that have been created by other users of the site.
 Users cannot CRUD on these cards but are welcome to copy them to their own collection by selecting add to collection.  The user who created the card is shown on the origional card as well.  When a user copies a card, the note on the copied card references the user the card was copied from.
-<image src="./readmePhotos/community"></image>
+<image src="./readmePhotos/community.png"></image>
 
 
 ## Learning Objectives
