@@ -1,6 +1,17 @@
-# vocab-YOU-lary
+# Vocab-YOU
 
-In this student assessment, you will be creating an application that allows users to CRUD vocabulary cards, authenticate with Google, and filter.
+I feel this project is a good indication of skills learned as of week 10 at Nashville Software School's Full Stack Web Development Boot Camp we were tasked with creating an application that allows users to CRUD vocabulary cards, authenticate with Google, and filter.
+
+## About Vocab-You
+
+This application main purpose is to store note cards centered around Tech-Vocabulary with the ability to see, share, and gather information from mutual users of the program.
+
+## Using Vocab-You
+### Visit the site at : https://voacb-you.netlify.app
+
+After authentication, users can begin by adding a category they would like to store information about. 
+
+
 
 ## Learning Objectives
 - Single Responsibility Principle (each component/function should have one job)
@@ -10,16 +21,10 @@ In this student assessment, you will be creating an application that allows user
 - Representing data as HTML
 - Usage of semantic HTML5 tags
 - Asynchronous Programming
-- Promises 
+- Promises
 
-## REMINDER
-We are not looking for completion of all stretch goals, but are focused on you hitting MVP, although if you can make it work completely, then wahoo!
+## Tools Used:
 
-What we are looking for is MVP, time management, critical thinking about the concepts, creative thinking to bind the concepts together for a solution, and collaboration with your teammates and instruction team.
-
-If you only get MVP complete, but display the above Core Skills and can demonstrate understanding of the fundamental code concepts, then you are learning and growing - which is what we care about.
-
-## Tools To Use:
 - Postman for API testing
 - Firebase for database, rules, and authentication
 - Webpack template setup steps (Located in your cohort repo)
@@ -28,64 +33,3 @@ If you only get MVP complete, but display the above Core Skills and can demonstr
 - Axios for requests
 - Github projects/milestones for planning out work
 - Bootstrap 5 for styling
-
-Make sure your Developer Tools are open at all times while working on this project. Use the messages provided in the Console to determine what code needs to be fixed or implemented, and use breakpoints in the Sources tab to step through your code as you debug.
-
-## Get Started
-Create issue tickets from the items below to help you get started. 
-- [X] Setup your firebase project and create the `.env` file with your keys. (Reference the [Firebase videos](https://vimeo.com/showcase/codetracker-firebase) if you need help getting started)
-- [X] Plan your project. Take no more than an hour to plan (ERD, Flow Chart, Postman)
-- [X] Use this template (webpack) to create the project on your github account
-- [X] Make sure you are in your `workspace/foundations/exercises` directory
-- [X] `git clone YOUR_GITHUB_REPO_LINK`
-- [X] `cd` into the directory
-- [X] Run `npm install` to install your dependencies
-- [X] Type `code .` to open the project in VS Code
-- [X] `npm start` to start your server
-- [X] Plan your project by creating the tickets you will work through using Github Projects
-- [X] START CODING!
-
-# MVP Requirements
-[MVP Wireframe](https://www.figma.com/file/IW4jF3GnzCFLYbEXlgFNIZ/MVP)
-- [X] An ERD of your data
-- [X] Use Firebase for DB and authentication
-- [X] Technical Flow chart (timebox this)
-- [X] The app has a navigation bar
-  - [X] A logo
-  - [X] Logout button
-  - [X] Create Entry
-  - [X] Any other options you would like to add
-
-**The most basic requirement for this project is that a user can:**
-- [X] Login and Logout of the application using Firebase Google Authentication
-- [X] only see the vocabulary entries that they created
-- [X] CREATE a vocabulary entry:
-  - [X] Title
-  - [X] Definition
-  - [X] Language/Tech
-  - [X] Time submitted - Not on form. Handle in your JS
-  - [X] user ID - Not on form. Pull from User object.
-- [X] READ THIER entries
-- [X] UPDATE THEIR entries
-- [X] DELETE THEIR entries
-- [X] Filter by language/tech
-- [X] Style your application using your own creativity!
-- [] No errors - linters should be clean
-
-## Stretch 1
-[Stretch 1 Wireframe](https://www.figma.com/file/yZE38QzpoUWELA22gGZJve/Stretch-1)
-- [X]] Allow users to order entries alphabetically, newest, oldest
-
-## Stretch 2
-[Stretch 2 Wireframe](https://www.figma.com/file/UC3Gi8HFRkZY8OIMOAUgL4/Stretch-2)
-- [X] Users can search vocabulary entries
-- [X] Users can add Language/Tech to the database and refrerence it on their vocabulary entries
-- [X] Users can only see the Languages/Tech categories that they created
-
-## Stretch 3
-[Stretch 3 Wireframe](https://www.figma.com/file/KgbkfaoRd5F8Q4qZ3G2Bg2/Stretch-3)
-- [X] Users can mark an entry as public or private
-- [X] Create a new navigation item called "Community" and on click of this item, users can see all the public entries
-- [X] If an entry is public, anyone can READ it. If it is private, only the user who created it can see it.
-- [X] If an entry is public, only the user who created it can CRUD on it
-- [X] If an entry is public, any user can copy the entry to their own set of entries and then CRUD on the new/copied entry
