@@ -25,6 +25,7 @@ Users can update, delete, sort, and make their cards public or private using the
 #### Selecting "Community Cards" from the Nav Bar displays the card that have been created by other users of the site.
 Users cannot CRUD on these cards but are welcome to copy them to their own collection by selecting add to collection.  The user who created the card is shown on the origional card as well.  When a user copies a card, the note on the copied card references the user the card was copied from.
 <image src="./readmePhotos/community.png"></image>
+<image src="./readmePhotos/copyCard.png"></image>
 
 
 ## Learning Objectives
