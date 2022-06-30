@@ -5,7 +5,7 @@ import {
 import { renderCards } from '../pages/myCards';
 import addCardForm from '../forms/addCardForm';
 import { getSingleCategory } from '../../../api/categoryData';
-import addCategoryForm from '../forms/addCategoryForm';
+// import addCategoryForm from '../forms/addCategoryForm';
 
 const domEvents = (user) => {
   document.querySelector('#card-div').addEventListener('click', (e) => {
@@ -50,7 +50,7 @@ const domEvents = (user) => {
     if (e.target.id.includes('editCat')) {
       const [, catName] = e.target.id.split('--');
       getSingleCategory(catName).then((catObj) => {
-        addCategoryForm(catObj);
+        console.warn(catObj);
       });
     }
     if (e.target.id.includes('deleteCat')) {
