@@ -4,7 +4,6 @@ import selectCategory from './selectCategory';
 
 const addCardForm = (uid, obj = {}) => {
   clearDom();
-  console.warn(obj);
   const content = `<form id="${obj.firebaseKey ? `update-card--${obj.firebaseKey}` : 'create-card'}">
   <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label">Card Title</label>

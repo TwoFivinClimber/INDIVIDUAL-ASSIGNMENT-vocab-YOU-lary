@@ -3,7 +3,6 @@ import renderToDom from '../../helpers/renderToDom';
 
 const addCategoryForm = (obj = {}) => {
   clearDom();
-  console.warn(obj);
   const content = `<form id="${obj.firebaseKey ? 'edit-category' : 'add-category'}">
   <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label">New Category</label>
