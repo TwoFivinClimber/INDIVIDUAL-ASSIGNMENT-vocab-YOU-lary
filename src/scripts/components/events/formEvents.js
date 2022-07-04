@@ -1,4 +1,4 @@
-import { createCard, updateCard } from '../../../api/cardData';
+import { createCard, getCards, updateCard } from '../../../api/cardData';
 import { addCategory, updateCategory } from '../../../api/categoryData';
 import addCardForm from '../forms/addCardForm';
 import { renderCards } from '../pages/myCards';
@@ -40,7 +40,7 @@ const formEvents = (user) => {
     if (e.target.id.includes('add-category')) {
       const newCategory = document.querySelector('#newCategory').value;
       const catObj = {
-        name: `Tech-${newCategory}`,
+        name: newCategory,
         uid: user.uid
       };
       addCategory(catObj, user.uid).then(() => {
@@ -48,12 +48,21 @@ const formEvents = (user) => {
       });
     }
     if (e.target.id.includes('edit-category')) {
-      const [, firebaseKey] = e.target.id.split('--');
+      const [, firebaseKey, name] = e.target.id.split('--');
       const catObj = {
         name: document.querySelector('#newCategory').value
       };
-      updateCategory(firebaseKey, catObj).then(() => {
-        categoryFilter(user.uid, catObj.name, firebaseKey);
+      const cardObj = {
+        category: document.querySelector('#newCategory').value
+      };
+      getCards(user.uid).then((cardsArr) => {
+        const cardEdit = cardsArr.filter((card) => card.category === name);
+        const updateCards = cardEdit.map((item) => updateCard(cardObj, item.firebaseKey));
+        Promise.all(updateCards).then(() => {
+          updateCategory(firebaseKey, catObj).then(() => {
+            categoryFilter(user.uid, catObj.name, firebaseKey);
+          });
+        });
       });
     }
   });
