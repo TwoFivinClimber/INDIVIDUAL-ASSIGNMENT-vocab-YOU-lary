@@ -5,29 +5,30 @@ import navCategories from '../navCategoryRender';
 import { renderCards, noCards } from '../pages/myCards';
 import categoryFilter from './navFilter';
 
-const navEvents = (uid) => {
+const navEvents = (user) => {
   document.querySelector('#navigation').addEventListener('click', (e) => {
     // GET USER CARDS
     if (e.target.id === 'myCardsBtn') {
-      getCards(uid).then((cardsArr) => {
-        renderCards(cardsArr, uid);
+      getCards(user.uid).then((cardsArr) => {
+        renderCards(cardsArr, user.uid);
       });
     }
     // ADD CARD
     if (e.target.id === 'addCardBtn') {
-      addCardForm(uid);
+      addCardForm(user.uid);
     }
     if (e.target.id === 'navbarDropdown') {
-      navCategories(uid);
+      navCategories(user.uid);
     }
     if (e.target.id === 'addCategory') {
       addCategoryForm();
     }
     if (e.target.id === 'communityBtn') {
       getPublicCards().then((cardsArr) => {
-        const renderArray = cardsArr.filter((card) => card.uid !== uid);
+        const renderArray = cardsArr.filter((card) => card.uid !== user.uid && !card.cardCopied);
         if (cardsArr.length) {
-          renderCards(renderArray, uid);
+          renderCards(renderArray, user.uid);
+          document.querySelector('#sort-div').innerHTML = '';
         } else {
           noCards('Tell your friends about the site !');
         }
@@ -38,16 +39,16 @@ const navEvents = (uid) => {
   // NAV CATEGORY FILTER
   document.querySelector('#navCategories').addEventListener('click', (e) => {
     if (e.target.id.includes('navCat')) {
-      const [, filterStr] = e.target.id.split('--');
+      const [, filterStr, firebaseKey] = e.target.id.split('--');
       // eslint-disable-next-line no-use-before-define
-      categoryFilter(uid, filterStr);
+      categoryFilter(user.uid, filterStr, firebaseKey);
     }
   });
   // SEARCH CARD
   document.querySelector('#search').addEventListener('keyup', (e) => {
     const searchBar = document.querySelector('#search').value.toLowerCase();
     if (e.keyCode === 13) {
-      getCards(uid).then((cardsArr) => {
+      getCards(user.uid).then((cardsArr) => {
         const renderArr = [];
         // eslint-disable-next-line no-restricted-syntax
         for (const card of cardsArr) {
@@ -55,7 +56,7 @@ const navEvents = (uid) => {
             renderArr.push(card);
           }
           if (renderArr.length) {
-            renderCards(renderArr, uid);
+            renderCards(renderArr, user.uid);
           } else {
             noCards('Hmmmm...Nothing Found. Try Again or Add the Card');
           }

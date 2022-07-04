@@ -1,7 +1,7 @@
 import renderToDom from '../../helpers/renderToDom';
 
 const renderFilter = () => {
-  const content = `<div class="btn-group">
+  const content = `<div class="filter-btn btn-group">
   <button class="sortBtn btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
     Sort By...
   </button>

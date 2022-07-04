@@ -13,9 +13,9 @@ const startApp = (user) => {
   navBar(user);
   renderFooter();
   logoutButton();
-  navEvents(user.uid);
+  navEvents(user);
   formEvents(user);
-  domEvents(user.uid);
+  domEvents(user);
   document.getElementById('myCardsBtn').click();
 };
 

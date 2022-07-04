@@ -4,7 +4,7 @@ import renderFilter from './cardFilter';
 
 const noCards = (str) => {
   clearDom();
-  const content = `<h1>${str || 'Add A Card to Grow Your Vocabulary'}</h1>`;
+  const content = `<h1>${str || "Add A Card to Grow Your Vocabulary.  You'll need a category first"}</h1>`;
   renderToDom('#card-div', content);
 };
 
@@ -29,7 +29,7 @@ const renderCards = (arr, uid) => {
     <span id="userOnCard" class="${card.uid === uid ? 'mod' : ''} userText">Created By: ${card.displayName}</span>
     <img id="userIcon" class="${card.uid === uid ? 'mod' : ''} userIcon" src="${card.photoURL}"></img>
   </div>
-    <div class="cardDate">Created: ${card.date}</div>
+    <div class="cardDate">${card.cardCopied ? `Copied from ${card.copiedFrom} on ` : 'Created: '}${card.date}</div>
   </div>
 </div>`;
     });
