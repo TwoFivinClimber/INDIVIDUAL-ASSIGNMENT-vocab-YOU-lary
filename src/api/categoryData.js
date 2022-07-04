@@ -25,12 +25,18 @@ const addCategory = (catObj, uid) => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
-const getSingleCategory = (catName) => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/categories/.json?orderBy="name"&equalTo="${catName}"`)
+const getSingleCategory = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/categories/${firebaseKey}.json`)
     .then((catObj) => resolve(catObj.data))
     .catch((error) => reject(error));
 });
 
+const updateCategory = (firebaseKey, update) => new Promise((resolve, reject) => {
+  axios.patch(`${dbUrl}/categories/${firebaseKey}.json`, update)
+    .then(resolve)
+    .catch(reject);
+});
+
 export {
-  getAllCategories, getCategories, addCategory, getSingleCategory
+  getAllCategories, getCategories, addCategory, getSingleCategory, updateCategory
 };

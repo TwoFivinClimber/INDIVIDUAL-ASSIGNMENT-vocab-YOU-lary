@@ -28,6 +28,7 @@ const navEvents = (user) => {
         const renderArray = cardsArr.filter((card) => card.uid !== user.uid && !card.cardCopied);
         if (cardsArr.length) {
           renderCards(renderArray, user.uid);
+          document.querySelector('#sort-div').innerHTML = '';
         } else {
           noCards('Tell your friends about the site !');
         }
@@ -38,9 +39,9 @@ const navEvents = (user) => {
   // NAV CATEGORY FILTER
   document.querySelector('#navCategories').addEventListener('click', (e) => {
     if (e.target.id.includes('navCat')) {
-      const [, filterStr] = e.target.id.split('--');
+      const [, filterStr, firebaseKey] = e.target.id.split('--');
       // eslint-disable-next-line no-use-before-define
-      categoryFilter(user.uid, filterStr);
+      categoryFilter(user.uid, filterStr, firebaseKey);
     }
   });
   // SEARCH CARD

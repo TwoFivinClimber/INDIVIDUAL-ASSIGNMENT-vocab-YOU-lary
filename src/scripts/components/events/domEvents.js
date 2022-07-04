@@ -5,7 +5,7 @@ import {
 import { renderCards } from '../pages/myCards';
 import addCardForm from '../forms/addCardForm';
 import { getSingleCategory } from '../../../api/categoryData';
-// import addCategoryForm from '../forms/addCategoryForm';
+import addCategoryForm from '../forms/addCategoryForm';
 
 const domEvents = (user) => {
   document.querySelector('#card-div').addEventListener('click', (e) => {
@@ -48,15 +48,16 @@ const domEvents = (user) => {
   // CRUD Category
   document.querySelector('#contentHeader').addEventListener('click', (e) => {
     if (e.target.id.includes('editCat')) {
-      const [, catName] = e.target.id.split('--');
-      getSingleCategory(catName).then((catObj) => {
-        console.warn(catObj);
+      const [,, firebaseKey] = e.target.id.split('--');
+      getSingleCategory(firebaseKey).then((catObj) => {
+        addCategoryForm(catObj);
       });
     }
     if (e.target.id.includes('deleteCat')) {
       console.warn('trashCat');
     }
   });
+  // SORT CARDS
   document.querySelector('#sort-div').addEventListener('click', (e) => {
     if (e.target.id === 'aToZ') {
       getCards(user.uid).then((cardsArr) => {
