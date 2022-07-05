@@ -37,6 +37,12 @@ const updateCategory = (firebaseKey, update) => new Promise((resolve, reject) =>
     .catch(reject);
 });
 
+const deleteCategory = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.delete(`${dbUrl}/categories/${firebaseKey}.json`)
+    .then(resolve)
+    .catch(reject);
+});
+
 export {
-  getAllCategories, getCategories, addCategory, getSingleCategory, updateCategory
+  getAllCategories, getCategories, addCategory, getSingleCategory, updateCategory, deleteCategory
 };

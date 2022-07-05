@@ -4,7 +4,7 @@ import {
 } from '../../../api/cardData';
 import { renderCards } from '../pages/myCards';
 import addCardForm from '../forms/addCardForm';
-import { getSingleCategory } from '../../../api/categoryData';
+import { addCategory, deleteCategory, getSingleCategory } from '../../../api/categoryData';
 import addCategoryForm from '../forms/addCategoryForm';
 
 const domEvents = (user) => {
@@ -41,6 +41,11 @@ const domEvents = (user) => {
           date: new Date().toLocaleString(),
           dateData: Date.now()
         };
+        const newCat = {
+          name: cardObj.category,
+          uid: user.uid
+        };
+        addCategory(newCat, user.uid);
         createCard(newCard, user.uid).then((cardsArr) => renderCards(cardsArr, user.uid));
       });
     }
@@ -54,7 +59,22 @@ const domEvents = (user) => {
       });
     }
     if (e.target.id.includes('deleteCat')) {
-      console.warn('trashCat');
+      // eslint-disable-next-line no-alert
+      if (window.confirm('Are you sure? Deleting this category will delete ALL cards associated with it')) {
+        const [, name, firebaseKey] = e.target.id.split('--');
+        getCards(user.uid).then((cardsArr) => {
+          const filterCards = cardsArr.filter((card) => card.category === name);
+          const deleteCards = filterCards.map((card) => deleteCard(card.firebaseKey, user.uid));
+          Promise.all(deleteCards).then(() => {
+            deleteCategory(firebaseKey).then(() => {
+              // eslint-disable-next-line no-shadow
+              getCards(user.uid).then((cardsArr) => {
+                renderCards(cardsArr, user.uid);
+              });
+            });
+          });
+        });
+      }
     }
   });
   // SORT CARDS
@@ -71,13 +91,13 @@ const domEvents = (user) => {
         renderCards(revAlphaArr, user.uid);
       });
     }
-    if (e.target.id === 'newest') {
+    if (e.target.id === 'oldest') {
       getCards(user.uid).then((cardsArr) => {
         const earlyArr = cardsArr.sort((a, b) => a.dateData - b.dateData);
         renderCards(earlyArr, user.uid);
       });
     }
-    if (e.target.id === 'oldest') {
+    if (e.target.id === 'newest') {
       getCards(user.uid).then((cardsArr) => {
         const oldArr = cardsArr.sort((a, b) => b.dateData - a.dateData);
         renderCards(oldArr, user.uid);

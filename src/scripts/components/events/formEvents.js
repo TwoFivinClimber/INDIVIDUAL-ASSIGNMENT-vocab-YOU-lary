@@ -70,6 +70,10 @@ const formEvents = (user) => {
     if (e.target.id === 'cancel-edit') {
       document.getElementById('myCardsBtn').click();
     }
+    if (e.target.id.includes('cancel-edit-category')) {
+      const [, name, firebaseKey] = e.target.id.split('--');
+      categoryFilter(user.uid, name, firebaseKey);
+    }
   });
 };
 

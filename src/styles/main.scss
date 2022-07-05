@@ -35,7 +35,12 @@ body {
   font-size: 2em;
   background-color: #5EB1BF;
   padding: 20px;
-  border-radius: 20%;
+  border-radius: 25px;
+}
+.noCard{
+  margin: 20px;
+  font-weight: bolder;
+  color:#832d0b;
 }
 
 ///CARD STUFF
@@ -137,6 +142,7 @@ form .input{
   color: #DD6E42!important;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 3rem;
+  -webkit-text-stroke: 1px black;
 }
 .signOutBtn{
   background-color: #D84727;
