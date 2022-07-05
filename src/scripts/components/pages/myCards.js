@@ -4,7 +4,7 @@ import renderFilter from './cardFilter';
 
 const noCards = (str) => {
   clearDom();
-  const content = `<h1>${str || "Add A Card to Grow Your Vocabulary.  You'll need a category first"}</h1>`;
+  const content = `<h1 class="noCard">${str || 'Add A Card to Grow Your Vocabulary'}</h1>`;
   renderToDom('#card-div', content);
 };
 
