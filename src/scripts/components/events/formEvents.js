@@ -2,7 +2,7 @@ import { createCard, getCards, updateCard } from '../../../api/cardData';
 import { addCategory, updateCategory } from '../../../api/categoryData';
 import addCardForm from '../forms/addCardForm';
 import { renderCards } from '../pages/myCards';
-import categoryFilter from './navFilter';
+import categoryFilter from '../pages/navFilter';
 
 const formEvents = (user) => {
   document.querySelector('#form-div').addEventListener('submit', (e) => {
@@ -39,31 +39,43 @@ const formEvents = (user) => {
     }
     if (e.target.id.includes('add-category')) {
       const newCategory = document.querySelector('#newCategory').value;
-      const catObj = {
-        name: newCategory,
-        uid: user.uid
-      };
-      addCategory(catObj, user.uid).then(() => {
-        addCardForm(user.uid, {});
-      });
+      if (newCategory[newCategory.length - 1] !== '-') {
+        console.warn(newCategory);
+        const catObj = {
+          name: newCategory,
+          uid: user.uid
+        };
+        addCategory(catObj, user.uid).then(() => {
+          addCardForm(user.uid, {});
+        });
+      } else {
+        // eslint-disable-next-line no-alert
+        window.alert("Categories can't end in '-'");
+      }
     }
     if (e.target.id.includes('edit-category')) {
       const [, firebaseKey, name] = e.target.id.split('--');
-      const catObj = {
-        name: document.querySelector('#newCategory').value
-      };
-      const cardObj = {
-        category: document.querySelector('#newCategory').value
-      };
-      getCards(user.uid).then((cardsArr) => {
-        const cardEdit = cardsArr.filter((card) => card.category === name);
-        const updateCards = cardEdit.map((item) => updateCard(cardObj, item.firebaseKey));
-        Promise.all(updateCards).then(() => {
-          updateCategory(firebaseKey, catObj).then(() => {
-            categoryFilter(user.uid, catObj.name, firebaseKey);
+      const catEdit = document.querySelector('#newCategory').value;
+      if (catEdit[catEdit.length - 1] !== '-') {
+        const catObj = {
+          name: catEdit
+        };
+        const cardObj = {
+          category: document.querySelector('#newCategory').value
+        };
+        getCards(user.uid).then((cardsArr) => {
+          const cardEdit = cardsArr.filter((card) => card.category === name);
+          const updateCards = cardEdit.map((item) => updateCard(cardObj, item.firebaseKey));
+          Promise.all(updateCards).then(() => {
+            updateCategory(firebaseKey, catObj).then(() => {
+              categoryFilter(user.uid, catObj.name, firebaseKey);
+            });
           });
         });
-      });
+      } else {
+        // eslint-disable-next-line no-alert
+        window.alert("Categories can't end in '-'");
+      }
     }
   });
   document.querySelector('#form-div').addEventListener('click', (e) => {

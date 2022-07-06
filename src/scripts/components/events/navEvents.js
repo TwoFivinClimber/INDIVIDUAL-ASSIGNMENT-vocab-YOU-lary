@@ -3,7 +3,7 @@ import addCardForm from '../forms/addCardForm';
 import addCategoryForm from '../forms/addCategoryForm';
 import navCategories from '../navCategoryRender';
 import { renderCards, noCards } from '../pages/myCards';
-import categoryFilter from './navFilter';
+import categoryFilter from '../pages/navFilter';
 
 const navEvents = (user) => {
   document.querySelector('#navigation').addEventListener('click', (e) => {
