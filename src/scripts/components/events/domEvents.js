@@ -62,6 +62,7 @@ const domEvents = (user) => {
       // eslint-disable-next-line no-alert
       if (window.confirm('Are you sure? Deleting this category will delete ALL cards associated with it')) {
         const [, name, firebaseKey] = e.target.id.split('--');
+        console.warn(firebaseKey);
         getCards(user.uid).then((cardsArr) => {
           const filterCards = cardsArr.filter((card) => card.category === name);
           const deleteCards = filterCards.map((card) => deleteCard(card.firebaseKey, user.uid));
