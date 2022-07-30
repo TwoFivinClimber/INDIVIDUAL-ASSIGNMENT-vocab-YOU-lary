@@ -9,6 +9,9 @@ import addCategoryForm from '../forms/addCategoryForm';
 
 const domEvents = (user) => {
   document.querySelector('#card-div').addEventListener('click', (e) => {
+    if (e.target.id === 'add-first-card') {
+      document.getElementById('addCardBtn').click();
+    }
     if (e.target.id.includes('deleteCard')) {
       // eslint-disable-next-line no-alert
       if (window.confirm("Are you sure you'll remember it and want to delete ?")) {

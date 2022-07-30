@@ -4,7 +4,10 @@ import renderFilter from './cardFilter';
 
 const noCards = (str) => {
   clearDom();
-  const content = `<h1 class="noCard">${str || 'Add A Card to Grow Your Vocabulary'}</h1>`;
+  const content = `<div>
+  <h1 class="noCard">${str || 'Add A Card to Grow Your Vocabulary '}</h1>
+  <button id="add-first-card" type="button" class="btn btn-danger">Add Your First Card</button>
+  </div>`;
   renderToDom('#card-div', content);
 };
 
